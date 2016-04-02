@@ -11,4 +11,4 @@ In this project we are given a web-based application that reads RSS feeds. [Jasm
 ## Test Environment
 
 ##Resources
-[Testing DOM Events Using jQuery and Jasmine 2.0](http://www.htmlgoodies.com/beyond/javascript/js-ref/testing-dom-events-using-jquery-and-jasmine-2.0.html)
+[Unit Testing Javascript Usng Jasmine](http://bittersweetryan.github.io/jasmine-presentation/)
