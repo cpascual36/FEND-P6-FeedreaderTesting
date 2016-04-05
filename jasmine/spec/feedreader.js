@@ -25,8 +25,6 @@ $(function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-
-
         /* Loop through each feed in the allFeeds object and ensure
          * it has a URL defined and that the URL is not empty.
          */
@@ -36,7 +34,6 @@ $(function() {
                 expect(index.url.length).not.toBe('');
             });
         });
-
         /* Loop through each feed in the allFeeds object and ensure
          * it has a name defined and that the name is not empty.
          */
@@ -50,13 +47,11 @@ $(function() {
 
 
     describe('The menu', function() {
-
         /* Test ensures the menu element is hidden by default.
          */
         it('is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
-
         /* Test that menu changes visibility when menu icon is clicked.
          * Does menu display when clicked and does it hide when clicked again?
          */
@@ -85,10 +80,26 @@ $(function() {
         });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection"
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+    /* When a new feed is loaded by the loadFeed function
+     * the content actually change.
+     */
+    describe('New Feed Selection', function() {
+        var oldContent;
+        //Asynchronous loadFeed(); must be done before continuing with test
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                oldContent = $('.feed').html();
+                done();
+            });
+        });
+        //When loadFeed is done the content should be different
+        it('causes content to actually change', function(done) {
+            var newContent;
+            loadFeed(1, function() {
+                newContent = $('.feed').html();
+                expect(oldContent).not.toEqual(newContent);
+                done();
+            });
+        });
+    });
 }());
