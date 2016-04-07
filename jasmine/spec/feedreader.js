@@ -31,7 +31,7 @@ $(function() {
         it('has a URL defined and the URL is not empty', function() {
             allFeeds.forEach(function(index) {
                 expect(index.url).toBeDefined();
-                expect(index.url.length).not.toBe('');
+                expect(index.url.length).not.toBe(0);
             });
         });
         /* Loop through each feed in the allFeeds object and ensure
@@ -40,7 +40,7 @@ $(function() {
          it('has a name defined and the name is not empty', function() {
             allFeeds.forEach(function(index) {
                 expect(index.name).toBeDefined();
-                expect(index.name.length).not.toBe('');
+                expect(index.name.length).not.toBe(0);
             });
         });
     });
