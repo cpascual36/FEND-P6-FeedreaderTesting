@@ -8,7 +8,5 @@ In this project we are given a web-based application that reads RSS feeds. [Jasm
 1. Download the repository
 2. Open index.html in a browser
 
-## Test Environment
-
 ##Resources
 [Unit Testing Javascript Usng Jasmine](http://bittersweetryan.github.io/jasmine-presentation/)
